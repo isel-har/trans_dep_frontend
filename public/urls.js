@@ -1,5 +1,5 @@
-export const API_ENDPOINT    = `${process.env.NEXT_PUBLIC_IP}:8443`; // never forget
-export const HTTPENDPOINT    = `https://${API_ENDPOINT}/api/`;
+
+export const HTTPENDPOINT    = `https://${process.env.NEXT_PUBLIC_IP}/`
 export const LoginURL        = `${HTTPENDPOINT}api/auth/login/`;
 export const RegisterURL     = `${HTTPENDPOINT}api/auth/register/`;
 export const LogoutURL       = `${HTTPENDPOINT}api/auth/logout/`;
@@ -20,7 +20,7 @@ export const editURL         = `${HTTPENDPOINT}api/auth/edit/`;
 export const ChatURL         = `${HTTPENDPOINT}api/chat/`;
 
 // Websocket urls //
-export const WEBSOCKETURL    = `wss://${API_ENDPOINT}/ws/`;
+export const WEBSOCKETURL    = `wss://${process.env.NEXT_PUBLIC_IP}/ws/`;
 export const NotifWsURL      = `${WEBSOCKETURL}notifications`;
 export const GameWsURL         = `${WEBSOCKETURL}game`;
 export const ChatWsURL       = `${WEBSOCKETURL}chat`;
