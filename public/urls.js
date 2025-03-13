@@ -1,5 +1,5 @@
 
-export const HTTPENDPOINT    = `https://${process.env.NEXT_PUBLIC_IP}/`
+export const HTTPENDPOINT    = `https://${process.env.NEXT_PUBLIC_IP}/api/`
 export const LoginURL        = `${HTTPENDPOINT}api/auth/login/`;
 export const RegisterURL     = `${HTTPENDPOINT}api/auth/register/`;
 export const LogoutURL       = `${HTTPENDPOINT}api/auth/logout/`;
