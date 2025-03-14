@@ -19,7 +19,7 @@ export default function Input({ setUsers, type, className, placeholder }) {
           api
             .get(`search?query=${input.value}`)
             .then((res) => {
-              if (res.statusText === "OK") {
+              if (res.status === 200) {
                 setUsers(res.data);
               } else {
               }
@@ -31,6 +31,7 @@ export default function Input({ setUsers, type, className, placeholder }) {
             );
         } else {
           searchTab.style.display = "none";
+
         }
       }}
     />

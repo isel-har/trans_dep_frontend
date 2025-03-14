@@ -5,7 +5,7 @@ import {  useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { FaX } from "react-icons/fa6";
 import { useAxios } from "@/public/AxiosInstance";
-import { useAuth } from "@/app/contexts/authContext";
+// import { useAuth } from "@/app/contexts/authContext";
 
 export default function SearchT({setSearch}){
 
@@ -22,7 +22,7 @@ export default function SearchT({setSearch}){
           api
             .get(`search?query=${input.value}&index=${index}`)
             .then((res) => {
-              if (res.statusText === "OK") {
+              if (res.status === 200) {
                 if (index != 0){
                     setUsers(users.concat(res.data));
                 }

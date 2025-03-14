@@ -10,7 +10,7 @@ import Link from "next/link";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { useRouter } from "next/navigation";
 import { useAxios } from "@/public/AxiosInstance";
-import { useAuth } from "@/app/contexts/authContext";
+// import { useAuth } from "@/app/contexts/authContext";
 
 export default function Search({search, setSearch }) {
   
@@ -35,14 +35,15 @@ export default function Search({search, setSearch }) {
     if (input.value != undefined && input.value != "") {
       searchTab.style.display = "block"
       api
-        .get(`search?query=${input.value}&index=${index}`)
-        .then((res) => {
-            // console.log("ha result dial search : ", res);
-          if (res.statusText === "OK") {
-            if (index != 0){
-                setUsers(users.concat(res.data));
-            }
-            else{
+      .get(`search?query=${input.value}&index=${index}`)
+      .then((res) => {
+        // console.log("ha result dial search : ", res);
+        if (res.status === 200) {
+          // console.log("result : ", res.data);
+          if (index != 0){
+            setUsers(users.concat(res.data));
+          }
+          else{
                 setUsers(res.data)
             }
           } 
